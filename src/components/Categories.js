@@ -2,7 +2,9 @@ import useCategories from "../hooks/useCategories";
 import { Link } from 'react-router-dom';
 
 const Categories = () => {
-    const categories = useCategories();
+    const {categories, isLoading} = useCategories();
+
+    if(isLoading) return <p>loading...</p>
 
     return (
         <main className="Section">

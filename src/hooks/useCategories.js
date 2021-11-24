@@ -4,14 +4,19 @@ import { getCategories } from '../utils/api';
 
 const useCategories = () => {
     const [categories, setCategories] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        getCategories().then((categoriesFromServer) => {
+        setLoading(true);
+
+        getCategories()
+        .then((categoriesFromServer) => {
+            setLoading(false);
             setCategories(categoriesFromServer);
         });
     }, []);
 
-    return categories;
+    return {categories, isLoading};
 };
 
 export default useCategories;

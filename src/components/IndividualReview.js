@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
-import { getReviewById } from "../utils/api";
+import useReviewById from '../hooks/useReviewById';
+
 
 const SingleReview = () => {
     const {review_id} = useParams();
-    const [review, setreview] = useState([]);
-    
+    const {review, isLoading, err} = useReviewById(review_id);
 
-    useEffect(() => {
-        getReviewById(review_id).then((reviewObject) => {
-            setreview(reviewObject)
-        });
-    }, [review_id]);
+    if(isLoading) return <p>loading...</p>;
+    if (err) return <p>Error Status {err[0]}: {err[1]}</p>
 
     return (
         <main className="Single-Review">

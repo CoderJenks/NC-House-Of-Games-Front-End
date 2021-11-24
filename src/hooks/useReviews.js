@@ -2,16 +2,21 @@ import { useEffect, useState } from 'react';
 import { getReviews } from '../utils/api';
 
 
-const useReviews = () => {
+const useReviews = (query) => {
     const [reviews, setReviews] = useState([]);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        getReviews().then((reviewsFromServer) => {
-            setReviews(reviewsFromServer);
-        });
-    }, []);
+        setLoading(true);
 
-    return reviews;
+        getReviews(query)
+        .then((reviewsFromServer) => {
+            setLoading(false);
+            setReviews(reviewsFromServer);
+        })
+    }, [query]);
+
+    return {reviews, isLoading};
 };
 
 export default useReviews;
