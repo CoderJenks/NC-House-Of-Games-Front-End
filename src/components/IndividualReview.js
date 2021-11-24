@@ -8,7 +8,7 @@ const SingleReview = () => {
     const {review, isLoading, err} = useReviewById(review_id);
 
     if(isLoading) return <p>loading...</p>;
-    if (err) return <p>Error Status {err[0]}: {err[1]}</p>
+    if (err) return <p className="error">Error Status {err[0]}: {err[1]}</p>
 
     return (
         <main className="Single-Review">

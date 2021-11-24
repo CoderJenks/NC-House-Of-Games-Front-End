@@ -5,6 +5,7 @@ import { getReviews } from '../utils/api';
 const useReviews = (query) => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [err, setErr] = useState(null);
 
     useEffect(() => {
         setLoading(true);
@@ -14,9 +15,13 @@ const useReviews = (query) => {
             setLoading(false);
             setReviews(reviewsFromServer);
         })
+        .catch((err) => {
+            setLoading(false);
+            setErr([err.response.status, err.response.data.msg])
+        });
     }, [query]);
 
-    return {reviews, isLoading};
+    return {reviews, isLoading, err};
 };
 
 export default useReviews;

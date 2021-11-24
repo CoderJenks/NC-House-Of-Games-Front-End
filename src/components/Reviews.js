@@ -3,9 +3,10 @@ import { Link , useLocation} from 'react-router-dom';
 
 const Reviews = () => {
     const query = useLocation().search;
-    const {reviews, isLoading} = useReviews(query);
+    const {reviews, isLoading, err} = useReviews(query);
 
     if(isLoading) return <p>loading...</p>
+    if (err) return <p className="error">Error Status {err[0]}: {err[1]}</p>
 
     return (
         <main className="Section">
