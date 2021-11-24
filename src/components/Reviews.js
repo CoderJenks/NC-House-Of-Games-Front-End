@@ -10,8 +10,8 @@ const Reviews = () => {
             <ul className="Reviews">
                 {reviews.map((review) => {
                     return (
-                        <li className = "Review-card" key={review.review_id}>
-                            <Link to={`/reviews/${review.review_id}`}>
+                        <li key={review.review_id}>
+                            <Link className = "Review-card" to={`/reviews/${review.review_id}`}>
                                 <h2 className="Review-card-title" >{review.title}</h2>
                                 <p className="Review-card-designer" >Designer: {review.designer}</p>
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />

@@ -15,3 +15,9 @@ export const getCategories = () => {
         return res.data.categories;
     });
 };
+
+export const getReviewById = (id) => {
+    return ncGamesApi.get(`/reviews/${id}`).then((res) => {
+        return res.data.review;
+    });
+};
