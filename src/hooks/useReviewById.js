@@ -9,6 +9,7 @@ const useReviewById = (review_id) => {
     
     useEffect(() => {
         setLoading(true);
+        setErr(null);
 
         getReviewById(review_id)
         .then((reviewObject) => {

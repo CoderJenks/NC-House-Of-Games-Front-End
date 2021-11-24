@@ -9,6 +9,7 @@ const useReviews = (query) => {
 
     useEffect(() => {
         setLoading(true);
+        setErr(null);
 
         getReviews(query)
         .then((reviewsFromServer) => {
