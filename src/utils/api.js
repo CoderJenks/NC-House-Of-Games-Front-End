@@ -1,0 +1,17 @@
+import axios from 'axios';
+
+const ncGamesApi = axios.create({
+    baseURL: 'https://nc-games-2021-sj.herokuapp.com/api',
+});
+
+export const getReviews = () => {
+    return ncGamesApi.get('/reviews').then((res) => {
+        return res.data.reviews;
+    });
+};
+
+export const getCategories = () => {
+    return ncGamesApi.get('/categories').then((res) => {
+        return res.data.categories;
+    });
+};
