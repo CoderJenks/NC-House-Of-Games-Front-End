@@ -6,10 +6,15 @@ const useReviews = (query) => {
     const [reviews, setReviews] = useState([]);
     const [isLoading, setLoading] = useState(true);
     const [err, setErr] = useState(null);
+    const [category, setCategory] = useState()
+
+    
 
     useEffect(() => {
         setLoading(true);
         setErr(null);
+        if(query) {setCategory(query.split("=")[1].toUpperCase())};
+        if(!query) {setCategory([])}
 
         getReviews(query)
         .then((reviewsFromServer) => {
@@ -22,7 +27,7 @@ const useReviews = (query) => {
         });
     }, [query]);
 
-    return {reviews, isLoading, err};
+    return {reviews, isLoading, err, category};
 };
 
 export default useReviews;

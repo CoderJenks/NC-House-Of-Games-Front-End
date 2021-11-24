@@ -1,16 +1,19 @@
 import useReviews from "../hooks/useReviews";
 import { Link , useLocation} from 'react-router-dom';
+import { useState } from 'react';
 
 const Reviews = () => {
     const query = useLocation().search;
-    const {reviews, isLoading, err} = useReviews(query);
+    const {reviews, isLoading, err, category} = useReviews(query);
 
     if(isLoading) return <p>loading...</p>
-    if (err) return <p className="error">Error Status {err[0]}: {err[1]}</p>
+    if(err) return <p className="error">Error Status {err[0]}: {err[1]}</p>
+
 
     return (
         <main className="Section">
             <h2>Reviews</h2>
+            <h3>{category}</h3>
             <ul className="Reviews">
                 {reviews.map((review) => {
                     return (
