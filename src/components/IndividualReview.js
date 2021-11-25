@@ -16,7 +16,7 @@ const SingleReview = () => {
     if(commentsErr) return <p className="error">Error Status {err[0]}: {err[1]}</p>
 
     return (
-        <main className="Single-Review">
+        <main className="Section">
             <h2 className="individual-review-title">{review.title}</h2>
             <img className="review-img" src={review.review_img_url} alt={review.title} />
             <p className="review-category">  Category: {review.category}</p>
