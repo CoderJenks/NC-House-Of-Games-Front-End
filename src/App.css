@@ -3,7 +3,7 @@
   min-height: 100vh;
   border: 1px solid black;
   display: grid;
-  grid-template:  150px 150px 3fr / 1fr 5fr;
+  grid-template:  150px 3fr / 1fr 5fr;
   grid-template-areas:
   "Header Header" 
   "Welcome-page Welcome-page" 
