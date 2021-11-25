@@ -6,29 +6,30 @@ import Reviews from './components/Reviews'
 import IndividualReview from './components/IndividualReview'
 import Categories from './components/Categories';
 import Authors from './components/Authors';
-import { UserContext } from './contexts/UserContext'
-import { useState } from 'react';
+import { useContext} from 'react';
+import { UserContext} from './contexts/UserContext'
 import RequireLogin from './utils/RequireLogin';
 
 
 function App() {
-  const [currentUser, setCurrentUser] = useState([])
+  const {user} = useContext(UserContext);
   return (
+
     <BrowserRouter>
-      <UserContext.Provider value={{currentUser, setCurrentUser}}>
-        <div className="App">
-          <Header />
-          <RequireLogin />
-          <Nav />
-          <Routes>
-            <Route path="/reviews" element ={<Reviews />} />
-            <Route path="/reviews/:review_id" element ={<IndividualReview />} />
-            <Route path="/categories" element ={<Categories />} />
-            <Route path="/authors" element ={<Authors />} />
-          </Routes>
-        </div>
-      </UserContext.Provider>
+          <div className="App">
+            <Header />
+            <RequireLogin user={user}>
+              <Nav />
+              <Routes>
+                <Route path="/reviews" element ={<Reviews />} />
+                <Route path="/reviews/:review_id" element ={<IndividualReview />} />
+                <Route path="/categories" element ={<Categories />} />
+                <Route path="/authors" element ={<Authors />} />
+              </Routes>
+            </RequireLogin>
+          </div>
     </BrowserRouter>
+    
   );
 }
 
