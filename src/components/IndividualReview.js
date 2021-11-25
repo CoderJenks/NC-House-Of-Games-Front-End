@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useReviewById from '../hooks/useReviewById';
 import useComments from '../hooks/useComments';
 import Vote from "./Vote";
+import NewComment from "./NewComment";
 
 
 const SingleReview = () => {
@@ -27,6 +28,7 @@ const SingleReview = () => {
             <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} />
             <div className="Comments-Section">
                 <h3 className="comments-title">Comments</h3>
+                <NewComment className="Review-card-newComment" votes={review.votes} review_id={review.review_id} />
                 <ul className="Comments-display">
                 {comments.map((comment) => {
                     return (

@@ -34,3 +34,9 @@ export const updateReviewVotesById = (id) => {
         return res.data.review;
     });
 };
+
+export const postReviewCommentById = (id, username, comment_body) => {
+    return ncGamesApi.post(`/reviews/${id}/comments`,{body:comment_body, author:username}).then((res) => {
+        return res.data.review;
+    });
+};
