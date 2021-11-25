@@ -30,7 +30,7 @@ export const getCommentsById = (id) => {
 };
 
 export const updateReviewVotesById = (id) => {
-    return ncGamesApi.patch(`/reviews/${id}`).then((res) => {
+    return ncGamesApi.patch(`/reviews/${id}`,{inc_votes:1}).then((res) => {
         return res.data.review;
     });
 };
