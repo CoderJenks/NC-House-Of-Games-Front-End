@@ -1,6 +1,5 @@
 import useReviews from "../hooks/useReviews";
 import { Link , useLocation} from 'react-router-dom';
-import { useState } from 'react';
 
 const Reviews = () => {
     const query = useLocation().search;

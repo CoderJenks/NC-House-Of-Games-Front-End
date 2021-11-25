@@ -22,3 +22,9 @@ export const getReviewById = (id) => {
         return res.data.review;
     });
 };
+
+export const getCommentsById = (id) => {
+    return ncGamesApi.get(`/reviews/${id}/comments`).then((res) => {
+        return res.data.comments;
+    });
+};
