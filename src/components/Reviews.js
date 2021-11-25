@@ -1,5 +1,6 @@
 import useReviews from "../hooks/useReviews";
 import { Link , useLocation} from 'react-router-dom';
+import Vote from "./Vote";
 
 const Reviews = () => {
     const query = useLocation().search;
@@ -16,14 +17,14 @@ const Reviews = () => {
             <ul className="Reviews">
                 {reviews.map((review) => {
                     return (
-                        <li key={review.review_id}>
-                            <Link className = "Review-card" to={`/reviews/${review.review_id}`}>
-                                <h2 className="Review-card-title" >{review.title}</h2>
+                        <li className = "Review-card" key={review.review_id}>
+                            <Link className="Review-card-title" to={`/reviews/${review.review_id}`}>
+                                <h2 >{review.title}</h2>
+                            </Link>
                                 <p className="Review-card-designer" >Designer: {review.designer}</p>
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />
                                 <p className="Review-card-author" >Review Author: {review.owner}</p>
-                                <p className="Review-card-votes" >Votes: {review.votes}</p>
-                            </Link>
+                                <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} />
                             </li>
                     );
                 })}

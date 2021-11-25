@@ -28,3 +28,9 @@ export const getCommentsById = (id) => {
         return res.data.comments;
     });
 };
+
+export const updateReviewVotesById = (id) => {
+    return ncGamesApi.patch(`/reviews/${id}`).then((res) => {
+        return res.data.review;
+    });
+};
