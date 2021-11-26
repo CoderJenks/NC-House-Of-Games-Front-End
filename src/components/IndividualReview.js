@@ -8,8 +8,7 @@ import DeleteComment from "./DeleteComment";
 const SingleReview = () => {
     const {review_id} = useParams();
     const {review, isLoading, err} = useReviewById(review_id);
-    const {comments, isCommentsLoading, commentsErr} = useComments(review_id);
-
+    const {comments, setComments, isCommentsLoading, setCommentsLoading, commentsErr} = useComments(review_id);
 
     if(isLoading) return <p>review loading...</p>;
     if(isCommentsLoading) return <p>comments loading...</p>;
@@ -28,7 +27,7 @@ const SingleReview = () => {
             <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner}/>
             <div className="Comments-Section">
                 <h3 className="comments-title">Comments</h3>
-                <NewComment className="Review-card-newComment" votes={review.votes} review_id={review.review_id}/>
+                <NewComment className="Review-card-newComment" review_id={review.review_id} setComments={setComments} setCommentsLoading={setCommentsLoading}/>
                 <ul className="Comments-display">
                 {comments.map((comment) => {
                     return (
@@ -36,7 +35,7 @@ const SingleReview = () => {
                                 <p className="comment-card-author" >Comment Author: {comment.author}</p>
                                 <p className="comment-card-votes" >Votes: {comment.votes}</p>
                                 <p className="comment-card-body" >Comment: {comment.body}</p>
-                                <DeleteComment className="DeleteComment" comment_id={comment.comment_id} comment_author={comment.author}/>
+                                <DeleteComment className="DeleteComment" comment_id={comment.comment_id} comment_author={comment.author} setComments={setComments}/>
                             </li>
                     );
                 })}

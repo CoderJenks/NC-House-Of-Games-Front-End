@@ -6,7 +6,6 @@ const useComments = (review_id) => {
     const [comments, setComments] = useState([]);
     const [isCommentsLoading, setCommentsLoading] = useState(true);
     const [commentsErr, setCommentsErr] = useState(null);
-    
 
     useEffect(() => {
         setCommentsLoading(true);
@@ -23,7 +22,7 @@ const useComments = (review_id) => {
         });
     }, [review_id]);
 
-    return {comments, isCommentsLoading, commentsErr};
+    return {comments, setComments, isCommentsLoading, setCommentsLoading, commentsErr};
 };
 
 export default useComments;

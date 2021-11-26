@@ -37,13 +37,12 @@ export const updateReviewVotesById = (id) => {
 
 export const postReviewCommentById = (id, username, comment_body) => {
     return ncGamesApi.post(`/reviews/${id}/comments`,{body:comment_body, author:username}).then((res) => {
-        return res.data.review;
+        return res.data.comment;
     });
 };
 
 export const deleteCommentById = (id) => {
-    return ncGamesApi.delete(`/comments/${id}`).then((res) => {
-        console.log(res.data)
-        return res.data.comment;
+    return ncGamesApi.delete(`/comments/${id}`).then(() => {
+        return {msg:`comment ${id} deleted`};
     });
 };

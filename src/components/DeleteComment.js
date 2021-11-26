@@ -1,17 +1,27 @@
-import { useContext, useState} from "react";
+import { useContext} from "react";
 import { UserContext } from "../contexts/UserContext";
 import { deleteCommentById}  from "../utils/api"
 
-const DeleteComment = ({comment_id, comment_author}) => {
-    // const [voteModifier, setVoteModifier] = useState(0);
+const DeleteComment = ({comment_id, comment_author, setComments}) => {
     const {user} = useContext(UserContext)
     const isEnabled = user.username === comment_author
 
     return (
         <div>
             <button onClick = {() => {
-                deleteCommentById(comment_id);
-                console.log("comment deleted")
+                setComments((prevCommentsList) => {
+                    const newCommentsList = prevCommentsList.filter((comment) => {
+                        if (comment.comment_id !== comment_id) {
+                        return comment
+                        };
+                    });
+                    return newCommentsList;
+                });
+
+                deleteCommentById(comment_id)
+                .then((confirmation) => {
+                    console.log(confirmation.msg)
+                });
             }}
             disabled={!isEnabled}
             >
