@@ -6,8 +6,8 @@ import Reviews from './components/Reviews'
 import IndividualReview from './components/IndividualReview'
 import Categories from './components/Categories';
 import Authors from './components/Authors';
-import { useContext} from 'react';
-import { UserContext} from './contexts/UserContext'
+import { useContext } from 'react';
+import { UserContext } from './contexts/UserContext'
 import RequireLogin from './utils/RequireLogin';
 
 

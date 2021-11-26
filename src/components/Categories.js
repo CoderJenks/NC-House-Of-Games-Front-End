@@ -14,7 +14,7 @@ const Categories = () => {
                     return (
                         <li className = "Category-card" key={category.slug}>
                             <Link to={`/reviews?category=${category.slug}`}>
-                                <h2 className="category-card-title" >Category: {category.slug}</h2>
+                                <h3 className="category-card-title" >Category: {category.slug}</h3>
                                 <p className="category-card-description" >Description: {category.description}</p>
                             </Link>
                             </li>

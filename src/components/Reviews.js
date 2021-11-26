@@ -19,7 +19,7 @@ const Reviews = () => {
                     return (
                         <li className = "Review-card" key={review.review_id}>
                             <Link className="Review-card-title" to={`/reviews/${review.review_id}`}>
-                                <h2 >{review.title}</h2>
+                                <h3 >{review.title}</h3>
                             </Link>
                                 <p className="Review-card-designer" >Designer: {review.designer}</p>
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />
