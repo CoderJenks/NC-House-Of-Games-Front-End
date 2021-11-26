@@ -3,7 +3,7 @@ import useReviewById from '../hooks/useReviewById';
 import useComments from '../hooks/useComments';
 import Vote from "./Vote";
 import NewComment from "./NewComment";
-
+import DeleteComment from "./DeleteComment";
 
 const SingleReview = () => {
     const {review_id} = useParams();
@@ -36,6 +36,7 @@ const SingleReview = () => {
                                 <p className="comment-card-author" >Comment Author: {comment.author}</p>
                                 <p className="comment-card-votes" >Votes: {comment.votes}</p>
                                 <p className="comment-card-body" >Comment: {comment.body}</p>
+                                <DeleteComment className="DeleteComment" comment_id={comment.comment_id} comment_author={comment.author}/>
                             </li>
                     );
                 })}

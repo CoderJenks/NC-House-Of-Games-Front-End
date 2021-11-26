@@ -40,3 +40,10 @@ export const postReviewCommentById = (id, username, comment_body) => {
         return res.data.review;
     });
 };
+
+export const deleteCommentById = (id) => {
+    return ncGamesApi.delete(`/comments/${id}`).then((res) => {
+        console.log(res.data)
+        return res.data.comment;
+    });
+};
