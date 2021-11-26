@@ -24,7 +24,7 @@ const Reviews = () => {
                                 <p className="Review-card-designer" >Designer: {review.designer}</p>
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />
                                 <p className="Review-card-author" >Review Author: {review.owner}</p>
-                                <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} />
+                                <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner} />
                             </li>
                     );
                 })}

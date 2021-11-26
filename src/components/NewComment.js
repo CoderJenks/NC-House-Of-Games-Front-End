@@ -20,10 +20,10 @@ const NewComment = ({review_id}) => {
     //need to re-render as well
 
     return (
-        <div>
+        <>
             <form onSubmit={handleCommentSubmit}>
                 <label>
-                    Submit new comment:
+                    Submit new comment: 
                     <input
                         value={commentText}
                         onChange={(e) => setCommentText(e.target.value)}
@@ -31,7 +31,7 @@ const NewComment = ({review_id}) => {
                 </label>
                 <button>Submit</button>
             </form>
-        </div>        
+        </>        
     )
 };
 

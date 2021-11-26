@@ -25,10 +25,10 @@ const SingleReview = () => {
             <p className="review-owner">  owner: {review.owner}</p>
             <p className="review-created_at">  created_at: {review.created_at}</p>
             <p className="review-body">  review_body: {review.review_body}</p>
-            <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} />
+            <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner}/>
             <div className="Comments-Section">
                 <h3 className="comments-title">Comments</h3>
-                <NewComment className="Review-card-newComment" votes={review.votes} review_id={review.review_id} />
+                <NewComment className="Review-card-newComment" votes={review.votes} review_id={review.review_id}/>
                 <ul className="Comments-display">
                 {comments.map((comment) => {
                     return (
