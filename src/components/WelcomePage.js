@@ -13,10 +13,10 @@ const WelcomePage = () => {
 
     return (
         <div className = "WelcomePage">
-            <h2>Welcome Page</h2>
+            <h2>Welcome to NC House of Games!</h2>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Username:
+                        Please enter your username: <br/><br/>
                         <input
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
