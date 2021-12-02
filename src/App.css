@@ -88,8 +88,9 @@ h2 {
   grid-area: Review-card-img;
   border: purple 2px solid;
   max-width: 100%;
-  max-height: 100%;
+  height: 150px;
   display: block;
+  object-fit: fill;
 
 }
 
