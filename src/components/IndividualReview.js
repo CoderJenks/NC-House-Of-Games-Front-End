@@ -4,6 +4,7 @@ import useComments from '../hooks/useComments';
 import Vote from "./Vote";
 import NewComment from "./NewComment";
 import DeleteComment from "./DeleteComment";
+import '../IndividualReview.css';
 
 const SingleReview = () => {
     const {review_id} = useParams();

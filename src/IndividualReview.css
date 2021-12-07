@@ -1,0 +1,10 @@
+.review-img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: fill;
+}
+
+.Section {
+    padding-left: 5%;
+    padding-right: 5%;
+}
