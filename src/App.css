@@ -6,7 +6,6 @@
   grid-template:  150px 3fr / 150px 5fr;
   grid-template-areas:
   "Header Header" 
-  "Welcome-page Welcome-page" 
   "Nav Main-section";
 }
 

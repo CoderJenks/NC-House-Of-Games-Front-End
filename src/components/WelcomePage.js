@@ -12,7 +12,7 @@ const WelcomePage = () => {
     };
 
     return (
-        <div className = "WelcomePage">
+        <div className = "Section">
             <h2>Welcome to NC House of Games!</h2>
                 <form onSubmit={handleSubmit}>
                     <label>
