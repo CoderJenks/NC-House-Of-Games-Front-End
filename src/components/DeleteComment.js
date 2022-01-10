@@ -10,11 +10,9 @@ const DeleteComment = ({comment_id, comment_author, setComments}) => {
         <div>
             <button onClick = {() => {
                 setComments((prevCommentsList) => {
-                    const newCommentsList = prevCommentsList.filter((comment) => {
-                        if (comment.comment_id !== comment_id) {
-                        return comment
-                        };
-                    });
+                    const newCommentsList = prevCommentsList.filter((comment) => 
+                    (comment.comment_id !== comment_id)
+                    );
                     return newCommentsList;
                 });
 
