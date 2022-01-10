@@ -10,7 +10,6 @@ import { useContext } from 'react';
 import { UserContext } from './contexts/UserContext'
 import RequireLogin from './utils/RequireLogin';
 
-
 function App() {
   const {user} = useContext(UserContext);
   return (
@@ -21,6 +20,7 @@ function App() {
             <RequireLogin user={user}>
               <Nav />
               <Routes>
+                <Route path="/" element ={<Reviews />} />
                 <Route path="/reviews" element ={<Reviews />} />
                 <Route path="/reviews/:review_id" element ={<IndividualReview />} />
                 <Route path="/categories" element ={<Categories />} />
