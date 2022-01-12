@@ -2,11 +2,10 @@
   text-align: center;
   min-height: 100vh;
   border: 1px solid black;
-  display: grid;
-  grid-template:  150px 3fr / 150px 5fr;
-  grid-template-areas:
-  "Header Header" 
-  "Nav Main-section";
+}
+
+.DrawerLeft {
+  grid-area: DrawerLeft;
 }
 
 .App-header {
@@ -19,8 +18,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   font: sans-serif;
-  color: white;
-  background-color:  #eb1b24;
+  color: grey;
+  background-color:  white;
 }
 
 ul {

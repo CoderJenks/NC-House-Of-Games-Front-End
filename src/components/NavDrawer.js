@@ -20,7 +20,7 @@ import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import { Link } from "react-router-dom";
+import { Link, withRouter} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -87,9 +87,8 @@ export default function PersistentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{
            backgroundColor: '#eb1b24',
-           gridArea: 'Header',
            }}>
-        <Toolbar minHeight="50">
+        <Toolbar minheight="50">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -105,6 +104,7 @@ export default function PersistentDrawerLeft() {
         </Toolbar>
       </AppBar>
       <Drawer
+        className="Drawer" 
         sx={{
           width: drawerWidth,
           flexShrink: 0,
@@ -117,15 +117,16 @@ export default function PersistentDrawerLeft() {
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
+        <DrawerHeader >
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        {/* Change List to MenuList and ListItem to MenuItem? */}
+        <List >
           {['Profile', 'Logout'].map((text, index) => (
-            <ListItem button key={text}>
+            <ListItem button key={text} >
               <ListItemIcon>
                 {index % 2 === 0 ? <AccountCircleOutlinedIcon /> : <MeetingRoomOutlinedIcon />}
               </ListItemIcon>
@@ -149,7 +150,10 @@ export default function PersistentDrawerLeft() {
           ))}
         </List>       
       </Drawer>
+      <Main open={open}>
+        <DrawerHeader />
 
+      </Main>
     </Box>
   );
 }

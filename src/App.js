@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Reviews from './components/Reviews'
@@ -9,6 +9,7 @@ import Authors from './components/Authors';
 import { useContext } from 'react';
 import { UserContext } from './contexts/UserContext'
 import RequireLogin from './utils/RequireLogin';
+import PersistentDrawerLeft from './components/NavDrawer';
 
 function App() {
   const {user} = useContext(UserContext);
@@ -16,9 +17,9 @@ function App() {
 
     <BrowserRouter>
           <div className="App">
-            <Header />
+            {/* <Header /> */}
             <RequireLogin user={user}>
-              <Nav />
+              <PersistentDrawerLeft className="DrawerLeft"/>
               <Routes>
                 <Route path="/" element ={<Reviews />} />
                 <Route path="/reviews" element ={<Reviews />} />
