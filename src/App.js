@@ -1,30 +1,26 @@
 import './App.css';
-import {BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
-import Header from './components/Header';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Reviews from './components/Reviews'
 import IndividualReview from './components/IndividualReview'
 import Categories from './components/Categories';
 import Authors from './components/Authors';
-import { useContext, useState } from 'react';
 import RequireLogin from './utils/RequireLogin';
 import PersistentDrawerLeft from './components/NavDrawer';
+import UserProfile from './components/UserProfile';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({});
-
   return (   
     <BrowserRouter>
         <div className="App">
-          {/* <Header /> */}
           <PersistentDrawerLeft className="DrawerLeft"/>
-          <RequireLogin user={currentUser}>
-            
+          <RequireLogin>
             <Routes>
               <Route path="/" element ={<Reviews />} />
               <Route path="/reviews" element ={<Reviews />} />
               <Route path="/reviews/:review_id" element ={<IndividualReview />} />
               <Route path="/categories" element ={<Categories />} />
               <Route path="/authors" element ={<Authors />} />
+              <Route path="/user-profile" element ={<UserProfile />} />
             </Routes>
           </RequireLogin>
         </div>

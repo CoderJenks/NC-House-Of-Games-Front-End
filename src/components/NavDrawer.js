@@ -20,7 +20,7 @@ import MeetingRoomOutlinedIcon from '@mui/icons-material/MeetingRoomOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import { Link, withRouter} from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 
@@ -85,7 +85,6 @@ export default function PersistentDrawerLeft() {
   };
 
   const {user,logout, isLoggedIn} = useContext(UserContext);
-  console.log(user);
 
   const loginButton = () => {
     if(isLoggedIn){

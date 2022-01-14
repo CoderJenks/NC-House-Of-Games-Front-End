@@ -6,7 +6,7 @@ export const UserProvider = ({children}) => {
     const [user, setUser] = useState({});
 
     const isLoggedIn = !!user.username;
-    if(isLoggedIn === true){console.log(user)}
+    if(isLoggedIn === true){console.log("Logged in:", user)}
 
     const logout = () => {
         setUser({});
