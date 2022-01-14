@@ -84,8 +84,30 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
-  const {user,logout} = useContext(UserContext);
+  const {user,logout, isLoggedIn} = useContext(UserContext);
   console.log(user);
+
+  const loginButton = () => {
+    if(isLoggedIn){
+      return (
+        <ListItem button key={"Logout"} onClick={logout}>
+          <ListItemIcon>
+            <MeetingRoomOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Logout"} />
+        </ListItem>
+      )
+    } else {
+      return (
+        <ListItem button key={"Login"} onClick={logout}>
+          <ListItemIcon>
+            <MeetingRoomOutlinedIcon />
+          </ListItemIcon>
+          <ListItemText primary={"Login"} />
+        </ListItem>
+      )
+    }
+  }
 
   return (
     <Box >
@@ -140,18 +162,19 @@ export default function PersistentDrawerLeft() {
         <Divider />
         {/* Change List to MenuList and ListItem to MenuItem? */}
         <List >
+          <Link to={"/user-profile"}>
             <ListItem button key={"Profile"} >
               <ListItemIcon>
                 <AccountCircleOutlinedIcon />
               </ListItemIcon>
               <ListItemText primary={"Profile"} />
             </ListItem>
-            <ListItem button key={"Logout"} onClick={logout}>
-            <ListItemIcon>
-            <MeetingRoomOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Logout"} />
-          </ListItem>
+          </Link>
+
+          <Link to={"/"}>
+            {loginButton()}
+          </Link>
+          
         </List>
         <Divider />
         <List>
