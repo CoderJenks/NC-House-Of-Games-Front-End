@@ -21,6 +21,8 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import { Link, withRouter} from "react-router-dom";
+import { useContext } from 'react';
+import { UserContext } from '../contexts/UserContext';
 
 const drawerWidth = 240;
 
@@ -82,6 +84,9 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  const {user,logout} = useContext(UserContext);
+  console.log(user);
+
   return (
     <Box >
       <CssBaseline />
@@ -134,16 +139,20 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         {/* Change List to MenuList and ListItem to MenuItem? */}
-        {/* <List >
-          {['Profile', 'Logout'].map((text, index) => (
-            <ListItem button key={text} >
+        <List >
+            <ListItem button key={"Profile"} >
               <ListItemIcon>
-                {index % 2 === 0 ? <AccountCircleOutlinedIcon /> : <MeetingRoomOutlinedIcon />}
+                <AccountCircleOutlinedIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={"Profile"} />
             </ListItem>
-          ))}
-        </List> */}
+            <ListItem button key={"Logout"} onClick={logout}>
+            <ListItemIcon>
+            <MeetingRoomOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Logout"} />
+          </ListItem>
+        </List>
         <Divider />
         <List>
           {['Reviews', 'Categories',

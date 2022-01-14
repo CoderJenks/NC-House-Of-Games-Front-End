@@ -5,32 +5,30 @@ import Reviews from './components/Reviews'
 import IndividualReview from './components/IndividualReview'
 import Categories from './components/Categories';
 import Authors from './components/Authors';
-import { useContext } from 'react';
-import { UserContext } from './contexts/UserContext'
+import { useContext, useState } from 'react';
 import RequireLogin from './utils/RequireLogin';
 import PersistentDrawerLeft from './components/NavDrawer';
 
 function App() {
-  const {user} = useContext(UserContext);
-  return (
+  const [currentUser, setCurrentUser] = useState({});
 
+  return (   
     <BrowserRouter>
-          <div className="App">
-            {/* <Header /> */}
-            <PersistentDrawerLeft className="DrawerLeft"/>
-            <RequireLogin user={user}>
-              
-              <Routes>
-                <Route path="/" element ={<Reviews />} />
-                <Route path="/reviews" element ={<Reviews />} />
-                <Route path="/reviews/:review_id" element ={<IndividualReview />} />
-                <Route path="/categories" element ={<Categories />} />
-                <Route path="/authors" element ={<Authors />} />
-              </Routes>
-            </RequireLogin>
-          </div>
+        <div className="App">
+          {/* <Header /> */}
+          <PersistentDrawerLeft className="DrawerLeft"/>
+          <RequireLogin user={currentUser}>
+            
+            <Routes>
+              <Route path="/" element ={<Reviews />} />
+              <Route path="/reviews" element ={<Reviews />} />
+              <Route path="/reviews/:review_id" element ={<IndividualReview />} />
+              <Route path="/categories" element ={<Categories />} />
+              <Route path="/authors" element ={<Authors />} />
+            </Routes>
+          </RequireLogin>
+        </div>
     </BrowserRouter>
-    
   );
 }
 
