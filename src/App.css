@@ -9,17 +9,14 @@
 }
 
 .App-header {
-  grid-area: Header;
-  position: fixed;
   width: 100vw;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   font: sans-serif;
-  color: grey;
-  background-color:  white;
+  color: white;
+  background-color:  #eb1b24;
 }
 
 ul {
@@ -33,14 +30,14 @@ h2 {
   font: sans-serif;
 }
 
-.Nav {
+/* .Nav {
   grid-area: Nav;
   border: 1px solid purple;
   font-size: calc(5px + 2vmin);
   font: sans-serif;
   color: white;
   background-color:  #eb1b24;
-}
+} */
 
 .Nav__links {
   display: flex;
@@ -48,11 +45,7 @@ h2 {
 }
 
 .Section {
-  grid-area: Main-section;
-}
-
-.WelcomePage {
-  grid-area: Welcome-page;
+  display: block
 }
 
 .Reviews {
@@ -88,7 +81,7 @@ h2 {
 }
 
 .Review-card-img {
-  border: purple 2px solid;
+  /* border: purple 2px solid; */
   width: 150px;
   height: 150px;
   display: block;

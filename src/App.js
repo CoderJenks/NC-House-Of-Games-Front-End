@@ -1,7 +1,6 @@
 import './App.css';
 import {BrowserRouter, Routes, Route, useParams} from 'react-router-dom';
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Reviews from './components/Reviews'
 import IndividualReview from './components/IndividualReview'
 import Categories from './components/Categories';
@@ -18,8 +17,9 @@ function App() {
     <BrowserRouter>
           <div className="App">
             {/* <Header /> */}
+            <PersistentDrawerLeft className="DrawerLeft"/>
             <RequireLogin user={user}>
-              <PersistentDrawerLeft className="DrawerLeft"/>
+              
               <Routes>
                 <Route path="/" element ={<Reviews />} />
                 <Route path="/reviews" element ={<Reviews />} />

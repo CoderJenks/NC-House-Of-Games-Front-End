@@ -134,7 +134,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         {/* Change List to MenuList and ListItem to MenuItem? */}
-        <List >
+        {/* <List >
           {['Profile', 'Logout'].map((text, index) => (
             <ListItem button key={text} >
               <ListItemIcon>
@@ -143,10 +143,12 @@ export default function PersistentDrawerLeft() {
               <ListItemText primary={text} />
             </ListItem>
           ))}
-        </List>
+        </List> */}
         <Divider />
         <List>
-          {['Reviews', 'Categories', 'Authors'].map((text, index) => (
+          {['Reviews', 'Categories',
+          //  'Authors'
+          ].map((text, index) => (
             <Link to={`/${text}`}>
                 <ListItem button key={text}>
                     <ListItemIcon>
