@@ -72,8 +72,7 @@ h2 {
   width: 80%;
   height: 200px;
   display: grid;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
   grid-template: fit-content(180px) 1fr 1fr / 1fr 3fr 1fr;
   grid-template-areas:
@@ -82,10 +81,15 @@ h2 {
   "Review-card-img Review-card-author Review-card-votes";
 }
 
-.Review-card-img {
+.image-container {
   grid-area: Review-card-img;
+  justify-items: center;
+  align-items: center;
+}
+
+.Review-card-img {
   border: purple 2px solid;
-  max-width: 100%;
+  width: 150px;
   height: 150px;
   display: block;
   object-fit: fill;
@@ -111,7 +115,7 @@ h2 {
   grid-area: Review-card-votes;
   font-size: medium;
   display: flex;
-  justify-content: center;
+  justify-items: center;
   align-items: center;
 }
 

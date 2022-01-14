@@ -22,7 +22,10 @@ const Reviews = () => {
                                 <h3 >{review.title}</h3>
                             </Link>
                                 <p className="Review-card-designer" >Designer: {review.designer}</p>
+                                <div className="image-container">
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />
+                                </div>
+                                
                                 <p className="Review-card-author" >Review Author: {review.owner}</p>
                                 <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner} />
                             </li>
