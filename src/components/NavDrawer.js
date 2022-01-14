@@ -162,7 +162,7 @@ export default function PersistentDrawerLeft() {
         {/* Change List to MenuList and ListItem to MenuItem? */}
         <List >
           <Link to={"/user-profile"}>
-            <ListItem button key={"Profile"} >
+            <ListItem button key={"Profile"} onClick={handleDrawerClose}>
               <ListItemIcon>
                 <AccountCircleOutlinedIcon />
               </ListItemIcon>
@@ -170,7 +170,7 @@ export default function PersistentDrawerLeft() {
             </ListItem>
           </Link>
 
-          <Link to={"/"}>
+          <Link to={"/"} onClick={handleDrawerClose}>
             {loginButton()}
           </Link>
           
@@ -181,7 +181,7 @@ export default function PersistentDrawerLeft() {
           //  'Authors'
           ].map((text, index) => (
             <Link to={`/${text}`}>
-                <ListItem button key={text}>
+                <ListItem button key={text} onClick={handleDrawerClose}>
                     <ListItemIcon>
                         {index % 3 === 0 ?
                         <FeedOutlinedIcon /> :
