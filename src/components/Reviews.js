@@ -17,18 +17,26 @@ const Reviews = () => {
             <ul className="Reviews">
                 {reviews.map((review) => {
                     return (
-                        <li className = "Review-card" key={review.review_id}>
-                            <Link className="Review-card-title" to={`/reviews/${review.review_id}`}>
-                                <h3 >{review.title}</h3>
-                            </Link>
-                                <p className="Review-card-designer" >Designer: {review.designer}</p>
-                                <div className="image-container">
+                        <li className = "Review-container" key={review.review_id}>
+                            <div className = "Review-card">
+                             <Link className="image-container" to={`/reviews/${review.review_id}`}>
                                 <img className="Review-card-img" src={review.review_img_url} alt={review.title} />
-                                </div>
-                                
+                            </Link>
+                            <div className="Review-details">
+                                <Link className="Review-card-title" to={`/reviews/${review.review_id}`}>
+                                    <h3 >{review.title}</h3>
+                                </Link>
+                                <p className="Review-card-designer" >Designer: {review.designer}</p>
                                 <p className="Review-card-author" >Review Author: {review.owner}</p>
-                                <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner} />
-                            </li>
+                            
+                            </div>
+                            
+                            <div className="Review-card-votes" >
+                            <Vote votes={review.votes} review_id={review.review_id} review_owner={review.owner} />
+                            </div>
+                            
+                            </div>
+                        </li>
                     );
                 })}
             </ul>

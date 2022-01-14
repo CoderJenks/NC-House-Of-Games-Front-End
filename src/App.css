@@ -1,22 +1,19 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  border: 1px solid black;
 }
 
-.DrawerLeft {
-  grid-area: DrawerLeft;
+h2 {
+  font-size: calc(10px + 2vmin);
+  font: sans-serif;
 }
 
-.App-header {
-  width: 100vw;
+.Reviews {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  font: sans-serif;
-  color: white;
-  background-color:  #eb1b24;
+  min-width: 90%;
 }
 
 ul {
@@ -25,34 +22,12 @@ ul {
   padding: 0;
 }
 
-h2 {
-  font-size: calc(10px + 2vmin);
-  font: sans-serif;
-}
-
-/* .Nav {
-  grid-area: Nav;
-  border: 1px solid purple;
-  font-size: calc(5px + 2vmin);
-  font: sans-serif;
-  color: white;
-  background-color:  #eb1b24;
-} */
-
-.Nav__links {
+.Review-container {
+  height: 15vh;
+  width: 90%;
   display: flex;
-  flex-direction: column;
-}
-
-.Section {
-  display: block
-}
-
-.Reviews {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-basis: 100%;
+  justify-content: space-between;
 }
 
 .Review-card {
@@ -61,55 +36,44 @@ h2 {
   border-radius: 10px;
   border: #eb1b24 2px solid;
   background-color: white;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  width: 80%;
-  height: 200px;
-  display: grid;
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  grid-template: fit-content(180px) 1fr 1fr / 1fr 3fr 1fr;
-  grid-template-areas:
-  "Review-card-img Review-card-title Review-card-votes"
-  "Review-card-img Review-card-designer Review-card-votes"
-  "Review-card-img Review-card-author Review-card-votes";
+  flex-basis: 100%;
 }
 
 .image-container {
-  grid-area: Review-card-img;
   justify-items: center;
   align-items: center;
+  display: flex;
+  width: 15vw;
+  height: 15vw;
+  flex-shrink: 1;
+  margin: 2%;
 }
 
 .Review-card-img {
-  /* border: purple 2px solid; */
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   display: block;
-  object-fit: fill;
-
+  object-fit: cover;
+  flex-shrink: 1;
 }
 
-.Review-card-title {
-  grid-area: Review-card-title;
-  font-size: medium;
-}
-
-.Review-card-designer {
-  grid-area: Review-card-designer;
-  font-size: medium;
-}
-
-.Review-card-author {
-  grid-area: Review-card-author;
-  font-size: medium;
+.Review-details {
+  width: 40vw;
+  max-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  font-size: calc(2px + 2vmin);
+  line-height: calc(2px + 2vmin);
 }
 
 .Review-card-votes {
-  grid-area: Review-card-votes;
-  font-size: medium;
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  margin: 2%;
+  font-size: calc(1px + 2vmin);
+  line-height: calc(1px + 2vmin);
 }
 
 .Categories {
@@ -141,7 +105,6 @@ h2 {
 }
 
 .review-img {
-  grid-area: review-img;
-  max-width: 100%;
-  max-height: 50%;
+  max-width: 50vw;
+  max-height: 25vh;
 }
