@@ -32,7 +32,7 @@ const SingleReview = () => {
                 <ul className="Comments-display">
                 {comments.map((comment) => {
                     return (
-                        <li key={comment.comment_id}>
+                        <li className="comment-container" key={comment.comment_id}>
                                 <p className="comment-card-author" >Comment Author: {comment.author}</p>
                                 <p className="comment-card-votes" >Votes: {comment.votes}</p>
                                 <p className="comment-card-body" >Comment: {comment.body}</p>
