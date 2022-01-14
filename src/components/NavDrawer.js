@@ -87,8 +87,9 @@ export default function PersistentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" open={open} sx={{
            backgroundColor: '#eb1b24',
+           maxWidth: "1"
            }}>
-        <Toolbar minheight="50">
+        <Toolbar minheight="50" >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -98,9 +99,18 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h1" noWrap component="div" fontFamily="sans-serif" fontWeight="700" fontSize="3.75rem">
-          NC House of Games
-          </Typography>
+          <Box 
+            sx={{
+              display: "flex",
+              flexBasis: "100%",
+              justifyContent: "center"
+              }}
+          >
+            {/* change from typography to header component? */}
+            <Typography variant="h1" fontFamily="sans-serif" fontWeight="700" fontSize="1.75rem" flexShrink={1}>
+              NC House of Games
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
       <Drawer
