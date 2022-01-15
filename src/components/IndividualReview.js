@@ -19,13 +19,17 @@ const SingleReview = () => {
     return (
         <main className="Section">
             <h2 className="individual-review-title">{review.title}</h2>
+            <h3 className="review-designer">  Game designed by: {review.designer}</h3>
+            <p className="review-category">  Game category: {review.category}</p>
             <img className="review-img" src={review.review_img_url} alt={review.title} />
-            <p className="review-category">  Category: {review.category}</p>
-            <p className="review-designer">  designer: {review.designer}</p>
-            <p className="review-owner">  owner: {review.owner}</p>
-            <p className="review-created_at">  created_at: {review.created_at}</p>
-            <p className="review-body">  review_body: {review.review_body}</p>
+            
+            <p className="review-owner">  Reviewed by: {review.owner}</p>
+            {/* <p className="review-created_at">  created_at: {review.created_at}</p> */}
+            <p className="review-body">  {review.review_body}</p>
+            <div>
+                Like this review? If so, then please vote for it!
             <Vote className="Review-card-votes" votes={review.votes} review_id={review.review_id} review_owner={review.owner}/>
+            </div>
             <div className="Comments-Section">
                 <h3 className="comments-title">Comments</h3>
                 <NewComment className="Review-card-newComment" review_id={review.review_id} setComments={setComments} setCommentsLoading={setCommentsLoading}/>
@@ -33,10 +37,10 @@ const SingleReview = () => {
                 {comments.map((comment) => {
                     return (
                         <li className="comment-container" key={comment.comment_id}>
-                                <p className="comment-card-author" >Comment Author: {comment.author}</p>
-                                <p className="comment-card-votes" >Votes: {comment.votes}</p>
-                                <p className="comment-card-body" >Comment: {comment.body}</p>
-                                <DeleteComment className="DeleteComment" comment_id={comment.comment_id} comment_author={comment.author} setComments={setComments}/>
+                            <p className="comment-card-body" >{comment.body}</p>
+                            <p className="comment-card-author" >Comment from: {comment.author}</p>
+                            {/* <p className="comment-card-votes" >Comment votes: {comment.votes}</p> */}
+                            <DeleteComment className="DeleteComment" comment_id={comment.comment_id} comment_author={comment.author} setComments={setComments}/>
                             </li>
                     );
                 })}
