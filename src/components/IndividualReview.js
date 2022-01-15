@@ -20,7 +20,7 @@ const SingleReview = () => {
         <main className="Section">
             <h2 className="individual-review-title">{review.title}</h2>
             <h3 className="review-designer">  Game designed by: {review.designer}</h3>
-            <p className="review-category">  Game category: {review.category}</p>
+            <p className="review-category">  Game category: <span>{review.category}</span> </p>
             <img className="review-img" src={review.review_img_url} alt={review.title} />
             
             <p className="review-owner">  Reviewed by: {review.owner}</p>

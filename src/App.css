@@ -3,6 +3,15 @@
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #eb1b24;
+}
+
 h2 {
   font-size: calc(10px + 2vmin);
   font: sans-serif;
@@ -132,4 +141,13 @@ ul {
   height: 5vh;
   display: flex;
   flex-wrap: wrap;
+}
+
+.review-category > span {
+  text-transform: capitalize;
+
+}
+
+.category-card-title {
+  text-transform: uppercase;
 }
