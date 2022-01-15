@@ -151,3 +151,10 @@ ul {
 .category-card-title {
   text-transform: uppercase;
 }
+
+button {
+  background-color: #eb1b24;
+  color: white;
+  border: black solid .5px;
+  font-weight: bold;
+}
