@@ -13,9 +13,10 @@ a:hover {
 }
 
 h2 {
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   font: sans-serif;
 }
+
 
 .Reviews {
   display: flex;
@@ -99,8 +100,26 @@ ul {
   border: #eb1b24 2px solid;
   background-color: white;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  width: 80%;
-  max-height: 200px;
+  height: 15vh;
+  display: grid;
+  grid-template-areas: "title" "desc";
+  grid-template-columns: 1fr 2fr;
+  overflow: hidden;
+  flex-basis: 100%;
+  box-sizing: content-box;
+}
+
+.category-card-title {
+  grid-area: "title";
+  text-transform: uppercase;
+  font-size: calc(8px + 2vmin);
+}
+
+.category-card-description {
+  grid-area: "desc";
+  font-size: calc(8px + 2vmin);
+  height: 12vh;
+  overflow: hidden;
 }
 
 .Single-Review {
@@ -146,10 +165,6 @@ ul {
 .review-category > span {
   text-transform: capitalize;
 
-}
-
-.category-card-title {
-  text-transform: uppercase;
 }
 
 button {
