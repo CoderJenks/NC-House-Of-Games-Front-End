@@ -26,12 +26,15 @@ const NewComment = ({review_id, setComments, setCommentsLoading}) => {
         <>
             <form onSubmit={handleCommentSubmit}>
                 <label>
-                    Submit new comment: 
+                    Submit new comment:
+                    
+                </label>
+                <br />
                     <input
                         value={commentText}
                         onChange={(e) => setCommentText(e.target.value)}
                     ></input>
-                </label>
+                <br />
                 <button>Submit</button>
             </form>
         </>        

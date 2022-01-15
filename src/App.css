@@ -126,3 +126,10 @@ ul {
 .Comments-display {
   margin-top: 2vh;
 }
+
+.Comments-Section > form > input {
+  width: 90vw;
+  height: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+}
