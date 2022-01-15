@@ -175,3 +175,10 @@ button {
   border: black solid .5px;
   font-weight: bold;
 }
+
+button:disabled {
+  background-color: grey;
+  color: white;
+  border: black solid .5px;
+  font-weight: bold;
+}
